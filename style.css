@@ -1,0 +1,142 @@
+/*Setup*/
+
+:root{
+    
+    --rad:5px;
+    --outside-padding: 32vw;
+    --global-margin:20px;
+
+    --c_green:#09b6b0;
+    --c_yellow:#d29b42;
+    --c_red:#f25e62;
+    --c_blue:#4a7fb1;
+}
+
+*{
+    padding:0;
+    margin: var(--global-margin);
+    font-family:sans-serif;
+    font-weight:lighter;
+}
+
+.bold{
+    font-weight:bold;
+}
+.grid{
+    display: grid;
+}
+
+
+/* Outside Text */
+
+body{
+    text-align:center;
+}
+
+#outside{
+    /*margin-left: calc(calc( var(--outside-margin) - var(--global-padding) ) - var(--outside-width));
+    margin-right: calc(calc( var(--outside-margin) - var(--global-padding) ) - var(--outside-width));*/
+    padding-left: var(--outside-padding); 
+    padding-right: var(--outside-padding);
+}
+
+
+
+
+/*CARDS */
+.cards_container{
+    column-count:3;
+    grid-gap: 10px;
+}
+
+.card{
+    border-radius:var(--rad); 
+    box-shadow: 3px 4px 15px #AAA;
+    padding:10px;
+    text-align:left;
+}
+
+#card-red{
+    margin-bottom: -13vh;
+    grid-column: 2;
+    grid-row: 1;
+    border-top: var(--c_red) 3px solid;
+}
+
+#card-green{
+    grid-column: 1;
+    grid-row: 2;
+    border-top: var(--c_green) 3px solid; 
+    border-radius:var(--rad);
+}
+
+#card-blue{
+    grid-column: 3;
+    grid-row: 2;
+    border-top: var(--c_blue) 3px solid; 
+    border-radius:var(--rad);
+}
+
+#card-yellow{
+    margin-top: -13vh;
+    grid-column: 2;
+    grid-row: 3;
+    border-top: var(--c_yellow) 3px solid; 
+    border-radius:var(--rad);
+}
+
+.img{
+    text-align:right;
+    justify-content: end;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width:900px){
+    /* SETUP */
+    :root{
+        --outside-padding: 1px;
+    }
+
+    body{
+        margin-left:5px;
+        margin-right:5px;
+    }
+
+    h1{
+        font-size:23px;
+    }
+
+    p{
+        text-align: justify;
+    }
+    /* Card containers */
+    .cards_container{
+        column-count:1;
+        grid-gap: 10px;
+    }
+    
+    #card-red{
+        margin-bottom: 20px;
+
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    #card-green{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    #card-blue{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    
+    #card-yellow{
+        margin-top: 20px;
+        grid-column: 1;
+        grid-row: 3;
+    }
+}
